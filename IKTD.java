@@ -204,6 +204,33 @@ public class IKTD extends JavaPlugin implements Listener {
 		
 		}
 	}
+	
+	@SuppressWarnings("deprecation")
+	@EventHandler
+	public void onBlockPlaceEvent(BlockPlaceEvent event) {
+		
+		Player p = event.getPlayer();
+		
+		if(p.getItemInHand().getType()==Material.COAL_BLOCK && p.getItemInHand().getItemMeta().getDisplayName().matches(ChatColor.DARK_GRAY + "Coal Kit")) {
+			event.setCancelled(true);
+		} else if(p.getItemInHand().getType()==Material.IRON_BLOCK && p.getItemInHand().getItemMeta().getDisplayName().matches(ChatColor.GRAY + "Iron Kit")) {
+			event.setCancelled(true);
+		} else if(p.getItemInHand().getType()==Material.GOLD_BLOCK && p.getItemInHand().getItemMeta().getDisplayName().matches(ChatColor.YELLOW + "Gold Kit")) {
+			event.setCancelled(true);
+		} else if(p.getItemInHand().getType()==Material.LAPIS_BLOCK && p.getItemInHand().getItemMeta().getDisplayName().matches(ChatColor.BLUE + "Lapis Kit")) {
+			event.setCancelled(true);
+		} else if(p.getItemInHand().getType()==Material.REDSTONE_BLOCK && p.getItemInHand().getItemMeta().getDisplayName().matches(ChatColor.RED + "Redstone Kit")) {
+			event.setCancelled(true);
+		} else if(p.getItemInHand().getType()==Material.DIAMOND_BLOCK && p.getItemInHand().getItemMeta().getDisplayName().matches(ChatColor.AQUA + "Diamond Kit")) {
+			event.setCancelled(true);
+		} else if(p.getItemInHand().getType()==Material.OBSIDIAN && p.getItemInHand().getItemMeta().getDisplayName().matches(ChatColor.LIGHT_PURPLE + "Obsidian Kit")) {
+			event.setCancelled(true);
+		} else if(p.getItemInHand().getType()==Material.EMERALD_BLOCK && p.getItemInHand().getItemMeta().getDisplayName().matches(ChatColor.GREEN + "Emerald Kit")) {
+			event.setCancelled(true);
+		}
+	}
+	
+	
 	// Iron Kit
 	@EventHandler
 	public void onInventoryIronConfClick(InventoryClickEvent event) {
